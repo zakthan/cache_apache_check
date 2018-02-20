@@ -8,7 +8,8 @@ date=`date '+%b %d'`
 ##if data is 0? then remove 0
 #####date=$(echo $date|sed "s/0/ /")
 cache_root=/tmp/httpd/cache/
-COUNT_FILES_WITH_CURRENT_DATE=$(find $cache_root  -type f|xargs ls -lt|head|grep "$(echo $date|sed "s/0/ /")"|wc -l)
+#old#COUNT_FILES_WITH_CURRENT_DATE=$(find $cache_root  -type f|xargs ls -lt|head|grep "$(echo $date|sed "s/0/ /")"|wc -l)
+COUNT_FILES_WITH_CURRENT_DATE=$(find $cache_root  -type f -mtime 0|wc -l)
 ####echo $COUNT_FILES_WITH_CURRENT_DATE
 
 /usr/bin/zabbix_sender -z $ZABBIX -s $HOST -k $KEY -o $COUNT_FILES_WITH_CURRENT_DATE
