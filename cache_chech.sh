@@ -1,9 +1,9 @@
 #!/bin/bash
 HOST=`hostname`
-ZABBIX=pvzabbix01.cosmote.gr
+ZABBIX=*****
 KEY=cache_count_for_current_date
 ##MAILLIST=middleware@ote.gr
-MAILLIST=azakopoulos@ote.gr
+MAILLIST=azakopoulos@****.gr
 date=`date '+%b %d'`
 ##if data is 0? then remove 0
 #####date=$(echo $date|sed "s/0/ /")
